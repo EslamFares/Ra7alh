@@ -7,7 +7,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text(AppStrings.appName),
+      body: Center(child: Text(AppStrings.appName)),
     );
   }
 }
