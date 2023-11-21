@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
+import 'package:ra7alh/feature/onboarding/data/onboarding_model.dart';
+import 'package:ra7alh/feature/onboarding/views/widgets/createaccount_loginnow.dart';
 import 'package:ra7alh/feature/onboarding/views/widgets/on_boarding_body.dart';
 import 'package:ra7alh/feature/onboarding/views/widgets/skip_btn.dart';
 
-class OnboardingView extends StatelessWidget {
-  OnboardingView({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
+
+  @override
+  State<OnboardingView> createState() => _OnboardingViewState();
+}
+
+class _OnboardingViewState extends State<OnboardingView> {
   final PageController controller = PageController(initialPage: 0);
+
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +32,21 @@ class OnboardingView extends StatelessWidget {
                 children: [
                   SizedBox(height: context.height * .01),
                   const SkipBtn(),
-                  OnBoardingBody(controller: controller),
-                  const SizedBox(height: 80),
-                  CustomBtn(onTap: () {
-                    controller.nextPage(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.bounceIn);
-                  }),
+                  OnBoardingBody(
+                    controller: controller,
+                    onPageChage: (index) {
+                      setState(() {
+                        currentIndex = index;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 60),
+                  currentIndex == onBoardingData.length - 1
+                      ? const CreateAccountOrLoginNow()
+                      : CustomBtn(
+                          onTap: () => controller.nextPage(
+                              duration: const Duration(milliseconds: 200),
+                              curve: Curves.bounceIn)),
                   const SizedBox(height: 20),
                 ],
               ),

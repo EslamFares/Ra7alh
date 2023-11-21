@@ -5,8 +5,10 @@ import 'package:ra7alh/feature/onboarding/data/onboarding_model.dart';
 import 'package:ra7alh/feature/onboarding/views/widgets/onboarding_page_indicator.dart';
 
 class OnBoardingBody extends StatelessWidget {
-  const OnBoardingBody({super.key, required this.controller});
+  const OnBoardingBody(
+      {super.key, required this.controller, required this.onPageChage});
   final PageController controller;
+  final Function(int) onPageChage;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,7 @@ class OnBoardingBody extends StatelessWidget {
       child: PageView.builder(
         controller: controller,
         itemCount: onBoardingData.length,
+        onPageChanged: onPageChage,
         itemBuilder: (context, index) => Column(
           children: [
             Container(

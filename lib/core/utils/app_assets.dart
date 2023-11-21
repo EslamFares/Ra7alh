@@ -7,4 +7,6 @@ abstract class AppAssets {
   static const String icon = 'assets/icon/icon.png';
   static const String icon512 = 'assets/icon/icon512.png';
   static const String iconSmall = 'assets/icon/icon_small.png';
+  static const String fontPacifico = 'Pacifico';
+  static const String fontPoppins = 'Poppins';
 }
