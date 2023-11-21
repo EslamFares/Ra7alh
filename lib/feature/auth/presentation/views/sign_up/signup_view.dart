@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_cubit.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_state.dart';
 import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/have_account.dart';
 import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/signup_form_body.dart';
 import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/welcome_text.dart';

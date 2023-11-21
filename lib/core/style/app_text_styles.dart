@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ra7alh/core/utils/app_assets.dart';
 import 'package:ra7alh/core/utils/app_colors.dart';
 
 abstract class AppTextStyles {
