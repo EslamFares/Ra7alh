@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ra7alh/core/database/cash/getstorage_helper.dart';
 import 'package:ra7alh/core/routers/routes.dart';
 import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_assets.dart';
@@ -16,13 +17,18 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    delayNavigate();
+    bool isFisrtTime = GetStorageHelper.readData('isfisrttime') ?? true;
+    if (isFisrtTime == true) {
+      delayNavigate(Routes.onboardingView);
+    } else {
+      delayNavigate(Routes.signUpView);
+    }
     super.initState();
   }
 
-  void delayNavigate() {
+  void delayNavigate(String path) {
     Future.delayed(const Duration(seconds: 2), () {
-      context.pushReplacement(Routes.onboardingView);
+      context.pushReplacement(path);
     });
   }
 

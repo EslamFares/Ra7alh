@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ra7alh/core/database/cash/getstorage_helper.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
 import 'package:ra7alh/feature/onboarding/data/onboarding_model.dart';
@@ -43,10 +44,12 @@ class _OnboardingViewState extends State<OnboardingView> {
                   const SizedBox(height: 60),
                   currentIndex == onBoardingData.length - 1
                       ? const CreateAccountOrLoginNow()
-                      : CustomBtn(
-                          onTap: () => controller.nextPage(
+                      : CustomBtn(onTap: () {
+                          GetStorageHelper.writeData('isfisrttime', false);
+                          controller.nextPage(
                               duration: const Duration(milliseconds: 200),
-                              curve: Curves.bounceIn)),
+                              curve: Curves.bounceIn);
+                        }),
                   const SizedBox(height: 20),
                 ],
               ),
