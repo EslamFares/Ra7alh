@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "671256677241",
+    "project_id": "ra7alh-c2ac6",
+    "storage_bucket": "ra7alh-c2ac6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671256677241:android:740d6b49e9652114087da8",
+        "android_client_info": {
+          "package_name": "com.eslamfares.ra7alh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUFtnv-e_91JHsbnveRa0UAEydN-IzHN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

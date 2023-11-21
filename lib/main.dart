@@ -5,10 +5,13 @@ import 'package:ra7alh/core/routers/app_router.dart';
 import 'package:ra7alh/core/services/services_locator.dart';
 import 'package:ra7alh/core/utils/app_colors.dart';
 import 'package:ra7alh/core/utils/mybloc_observer.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:ra7alh/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
   getItSetup();
 
