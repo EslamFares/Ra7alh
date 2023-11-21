@@ -3,9 +3,9 @@ import 'package:ra7alh/core/database/cash/getstorage_helper.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
 import 'package:ra7alh/feature/onboarding/data/onboarding_model.dart';
-import 'package:ra7alh/feature/onboarding/views/widgets/createaccount_loginnow.dart';
-import 'package:ra7alh/feature/onboarding/views/widgets/on_boarding_body.dart';
-import 'package:ra7alh/feature/onboarding/views/widgets/skip_btn.dart';
+import 'package:ra7alh/feature/onboarding/presentation/views/widgets/createaccount_loginnow.dart';
+import 'package:ra7alh/feature/onboarding/presentation/views/widgets/on_boarding_body.dart';
+import 'package:ra7alh/feature/onboarding/presentation/views/widgets/skip_btn.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});

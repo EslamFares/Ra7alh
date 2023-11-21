@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
 import 'package:ra7alh/feature/onboarding/data/onboarding_model.dart';
-import 'package:ra7alh/feature/onboarding/views/widgets/onboarding_page_indicator.dart';
+import 'package:ra7alh/feature/onboarding/presentation/views/widgets/onboarding_page_indicator.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody(

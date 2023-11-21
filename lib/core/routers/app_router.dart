@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/routers/routes.dart';
 import 'package:ra7alh/feature/auth/presentation/views/login/login_view.dart';
 import 'package:ra7alh/feature/auth/presentation/views/sign_up/signup_view.dart';
-import 'package:ra7alh/feature/onboarding/views/onboarding_view.dart';
+import 'package:ra7alh/feature/onboarding/presentation/views/onboarding_view.dart';
 import 'package:ra7alh/feature/splash/presentation/views/splash_view.dart';
 
 final GoRouter appRouter = GoRouter(routes: [
