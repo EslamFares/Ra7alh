@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ra7alh/core/routers/routes.dart';
 import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_assets.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
@@ -21,7 +22,7 @@ class _SplashViewState extends State<SplashView> {
 
   void delayNavigate() {
     Future.delayed(const Duration(seconds: 2), () {
-      context.push("/OnboardingView");
+      context.pushReplacement(Routes.onboardingView);
     });
   }
 

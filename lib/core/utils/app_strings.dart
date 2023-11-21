@@ -12,11 +12,11 @@ abstract class AppStrings {
       splashTextH2 = "From every place \non earth",
       splashTextB2 =
           "A big variety of ancient places \nfrom all over the world",
-      splashTextH3 = "Using modern AI technology /nfor better user experience",
+      splashTextH3 = "Using modern AI technology \nfor better user experience",
       splashTextB3 =
           "AI provide recommendations and helps \nyou to continue the search journey",
-      splashTextH4 = "Ra7alh App wishes you a happy trip",
-      splashTextBa =
+      splashTextH4 = "Ra7alh App wishes you \na happy trip",
+      splashTextB4 =
           "We hope you enjoy the trip in Egypt, \nthe Mother of the World",
       splashTextH5 = "Ra7alh App",
       splashTextB5 = "Let's go ....",
