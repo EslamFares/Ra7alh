@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ra7alh/core/utils/app_assets.dart';
 import 'package:ra7alh/core/utils/app_colors.dart';
 
 abstract class AppTextStyles {
@@ -22,4 +23,20 @@ abstract class AppTextStyles {
     color: AppColors.gray2,
     fontWeight: FontWeight.w500,
   );
+  static const TextStyle font16PoppinsDarkW500 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Poppins',
+    color: AppColors.dark,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle font28PoppinsBlacBold = TextStyle(
+    fontSize: 30,
+    fontFamily: 'Poppins',
+    color: AppColors.black,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle font16UnderLine = TextStyle(
+      fontSize: 16,
+      decoration: TextDecoration.underline,
+      fontFamily: 'Poppins');
 }

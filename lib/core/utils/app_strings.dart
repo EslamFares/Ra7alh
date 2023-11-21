@@ -22,7 +22,7 @@ abstract class AppStrings {
       splashTextB5 = "Let's go ....",
 
       //?Auth Strings
-      welcome = "Welcome!",
+      welcome = "Welcome !",
       welcomeBack = "Welcome Back!",
       fristName = "First Name",
       lastName = "Last Name",
@@ -32,7 +32,7 @@ abstract class AppStrings {
       termsAndCondition = "Terms and Condition",
       signUp = "Sign Up",
       signIn = "Sign In",
-      alreadyHaveAnAccount = "Already have an account ? ",
+      alreadyHaveAnAccount = "Already have an account ?",
       dontHaveAnAccount = "Don’t have an account ? ",
       forgotPassword = "Forgot Password ?",
       //!Home Strings

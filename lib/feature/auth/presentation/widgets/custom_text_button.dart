@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:ra7alh/core/style/app_text_styles.dart';
+
+class CustomTextButton extends StatelessWidget {
+  const CustomTextButton({
+    super.key,
+    required this.onTap,
+    this.text,
+    this.child,
+  });
+  final VoidCallback onTap;
+  final String? text;
+  final Widget? child;
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+        onPressed: onTap,
+        style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
+        child: child ??
+            Text(text ?? 'click',
+                style: AppTextStyles.font16UnderLine.copyWith(fontSize: 14)));
+  }
+}
