@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ra7alh/core/routers/app_router.dart';
+import 'package:ra7alh/core/routers/screens_router.dart';
 import 'package:ra7alh/core/utils/app_colors.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const Scaffold(),
-      routerConfig: appRouter,
+      routerConfig: screensRouter,
     );
   }
 }

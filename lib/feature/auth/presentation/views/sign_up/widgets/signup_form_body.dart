@@ -1,6 +1,8 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ra7alh/core/routers/app_routes.dart';
 import 'package:ra7alh/core/utils/app_strings.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
 import 'package:ra7alh/core/widgets/global_text_form.dart';
@@ -19,6 +21,8 @@ class SignUpFormBody extends StatelessWidget {
         if (state is SignUpFailState) {
           showSnack(context,
               contentType: ContentType.failure, message: state.errMsg);
+        } else if (state is SignUpSuccesState) {
+          context.pushReplacement(AppRoutes.homeView);
         }
       },
       builder: (context, state) {
@@ -55,17 +59,25 @@ class SignUpFormBody extends StatelessWidget {
               ),
               const CheckBoxTermsAndCondition(),
               const SizedBox(height: 88),
-              CustomBtn(
-                  text: AppStrings.signUp,
-                  onTap: () {
-                    if (cubit.signUpFormKey.currentState!.validate() &&
-                        cubit.isagreeTermsCondition) {
-                      debugPrint('done ===> sign Up');
-                      cubit.signUpWithEmailAndPassword();
-                    } else {
-                      showSnack(context, contentType: ContentType.warning);
-                    }
-                  }),
+              state is SignUpLoadingState
+                  ? const CircularProgressIndicator()
+                  : CustomBtn(
+                      text: AppStrings.signUp,
+                      onTap: () {
+                        if (cubit.signUpFormKey.currentState!.validate()) {
+                          if (cubit.isagreeTermsCondition) {
+                            cubit.signUpWithEmailAndPassword();
+                          } else {
+                            showSnack(context,
+                                contentType: ContentType.warning,
+                                message: 'agree to our Terms and Condition..');
+                          }
+                        } else {
+                          showSnack(context,
+                              contentType: ContentType.failure,
+                              message: 'please, enter data...');
+                        }
+                      }),
             ],
           ),
         );

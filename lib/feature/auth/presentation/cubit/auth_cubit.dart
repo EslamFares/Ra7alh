@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ra7alh/core/widgets/show_snack.dart';
 import 'package:ra7alh/feature/auth/presentation/cubit/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -30,8 +29,7 @@ class AuthCubit extends Cubit<AuthState> {
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailCtrl.text,
         password: passwordCtrl.text,
       );

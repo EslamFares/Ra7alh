@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/database/cash/getstorage_helper.dart';
-import 'package:ra7alh/core/routers/routes.dart';
+import 'package:ra7alh/core/routers/app_routes.dart';
 import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_assets.dart';
 import 'package:ra7alh/core/utils/app_size.dart';
@@ -19,9 +20,11 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     bool isFisrtTime = GetStorageHelper.readData('isfisrttime') ?? true;
     if (isFisrtTime == true) {
-      delayNavigate(Routes.onboardingView);
+      delayNavigate(AppRoutes.onboardingView);
     } else {
-      delayNavigate(Routes.signUpView);
+      FirebaseAuth.instance.currentUser == null
+          ? delayNavigate(AppRoutes.signUpView)
+          : delayNavigate(AppRoutes.homeView);
     }
     super.initState();
   }
