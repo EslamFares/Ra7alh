@@ -18,4 +18,14 @@ abstract class AppAssets {
   //===========
   static const String fontPacifico = 'Pacifico';
   static const String fontPoppins = 'Poppins';
+  //==================
+  static const String imgUrl =
+      'https://www.ancient-origins.net/sites/default/files/field/image/Egyptian-pharaoh-life.jpg';
+
+  static const String imgUrl2 =
+      'https://images.unsplash.com/photo-1590075865003-e48277faa558?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXNsYW1pY3xlbnwwfHwwfHx8MA%3D%3D';
+  static const String imgUrlKings1 =
+      'https://www.britain-magazine.com/wp-content/uploads/800px-Queen_Anne_of_Great_Britain.gif';
+  static const String imgUrlSovenir =
+      'https://images.theconversation.com/files/487024/original/file-20220928-13-s2i3ld.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip';
 }

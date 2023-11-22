@@ -45,25 +45,25 @@ List<PersistentBottomNavBarItem> navBarsItems() {
     PersistentBottomNavBarItem(
       icon: const Icon(FontAwesomeIcons.house),
       title: ("Home"),
-      activeColorPrimary: AppColors.blueDark,
+      activeColorPrimary: AppColors.blue,
       inactiveColorPrimary: AppColors.grayLight,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(FontAwesomeIcons.cartShopping),
       title: ("cart"),
-      activeColorPrimary: AppColors.blueDark,
+      activeColorPrimary: AppColors.blue,
       inactiveColorPrimary: AppColors.grayLight,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(FontAwesomeIcons.magnifyingGlass),
       title: ("search"),
-      activeColorPrimary: AppColors.blueDark,
+      activeColorPrimary: AppColors.blue,
       inactiveColorPrimary: AppColors.grayLight,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(FontAwesomeIcons.userLarge),
       title: ("profile"),
-      activeColorPrimary: AppColors.blueDark,
+      activeColorPrimary: AppColors.blue,
       inactiveColorPrimary: AppColors.grayLight,
     ),
   ];

@@ -21,6 +21,7 @@ class CustomTextButton extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
         child: child ??
             Text(text ?? 'click',
-                style: AppTextStyles.font16UnderLine.copyWith(fontSize: 14)));
+                style: AppTextStyles.font16PoppinsUnderLine
+                    .copyWith(fontSize: 14)));
   }
 }

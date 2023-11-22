@@ -5,10 +5,11 @@ import 'package:ra7alh/core/utils/app_colors.dart';
 
 class CustomNetWorkImg extends StatelessWidget {
   const CustomNetWorkImg(this.imgUrl,
-      {super.key, this.aspectRatio, this.raduis});
+      {super.key, this.aspectRatio, this.raduisNum, this.customRaduis});
   final String imgUrl;
   final double? aspectRatio;
-  final double? raduis;
+  final double? raduisNum;
+  final BorderRadius? customRaduis;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -16,11 +17,11 @@ class CustomNetWorkImg extends StatelessWidget {
       child: Material(
         color:
             // MediaQuery.of(context).platformBrightness == Brightness.dark?
-            AppColors.blueDark,
-        borderRadius: BorderRadius.circular(raduis ?? 14),
+            AppColors.white,
+        borderRadius: customRaduis ?? BorderRadius.circular(raduisNum ?? 14),
         elevation: 3,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(raduis ?? 14),
+          borderRadius: customRaduis ?? BorderRadius.circular(raduisNum ?? 14),
           child: CachedNetworkImage(
             imageUrl: imgUrl,
             fit: BoxFit.cover,

@@ -21,7 +21,7 @@ class OnBoardingSmoothPageIndicator extends StatelessWidget {
               dotHeight: 8,
               dotWidth: 25,
               dotColor: AppColors.gray,
-              activeDotColor: AppColors.blueDark), // your preferred effect
+              activeDotColor: AppColors.blue), // your preferred effect
           onDotClicked: (index) {}),
     );
   }

@@ -27,7 +27,7 @@ class CreateAccountOrLoginNow extends StatelessWidget {
               context.pushReplacement(AppRoutes.signInView);
             },
             child: const Text(AppStrings.loginNow,
-                style: AppTextStyles.font16UnderLine))
+                style: AppTextStyles.font16PoppinsUnderLine))
       ],
     );
   }

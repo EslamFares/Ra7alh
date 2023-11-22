@@ -8,17 +8,22 @@ import '../../../../core/widgets/small_icon_button.dart';
 class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomHomeAppBar({
     super.key,
+    required this.onTap,
   });
-
+  final Function onTap;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
+      foregroundColor: Colors.white,
+      // shadowColor: Colors.white,
+      surfaceTintColor: Colors.white,
+      elevation: 0,
       leading: SmallIconButton(
         icon: FontAwesomeIcons.equals,
-        onPressed: () {},
+        onPressed: onTap,
         iconSize: 30,
-        color: AppColors.blueDark,
+        color: AppColors.blue,
       ),
       actions: [
         Text(AppStrings.appName,

@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.white,
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blueDark),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blue),
         useMaterial3: true,
       ),
       // home: const Scaffold(),
