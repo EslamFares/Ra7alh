@@ -17,15 +17,13 @@ class HomeView extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                FirebaseAuth.instance.signOut();
                 iosShowDialog(
                     context: context,
                     title: 'Sign Out',
                     subTitle: 'out',
-                    onRefuse: () {
-                      context.pop();
-                    },
+                    onRefuse: () {},
                     onConfirm: () {
+                      FirebaseAuth.instance.signOut();
                       context.pushReplacement(AppRoutes.signInView);
                     });
               },

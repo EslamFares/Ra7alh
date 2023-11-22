@@ -40,6 +40,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       } else if (e.code == 'email-already-in-use') {
         emit(SignUpFailState(
             errMsg: 'The account already exists for that email.'));
+      } else {
+        emit(SignUpFailState(errMsg: '${e.code} ... ${e.message}'));
       }
     } catch (e) {
       emit(SignUpFailState(errMsg: e.toString()));

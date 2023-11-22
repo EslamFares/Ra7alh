@@ -1,14 +1,15 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/utils/app_strings.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
 import 'package:ra7alh/core/widgets/global_text_form.dart';
 import 'package:ra7alh/core/widgets/show_snack.dart';
-import 'package:ra7alh/feature/signup/presentation/cubit/signup_state.dart';
 import 'package:ra7alh/feature/signin/presentation/cubit/signin_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/cubit/signin_state.dart';
 
+import '../../../../core/routers/app_routes.dart';
 import '../../../signup/presentation/widgets/custom_text_button.dart';
 
 class SignInFormBody extends StatelessWidget {
@@ -17,7 +18,14 @@ class SignInFormBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInCubit, SignInState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is SignInFailState) {
+          showSnack(context,
+              contentType: ContentType.failure, message: state.errMsg);
+        } else if (state is SignInSuccesState) {
+          context.pushReplacement(AppRoutes.homeView);
+        }
+      },
       builder: (context, state) {
         SignInCubit cubit = SignInCubit.get(context);
         return Form(
@@ -52,7 +60,7 @@ class SignInFormBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 70),
-                state is SignUpLoadingState
+                state is SignInLoadingState
                     ? const CircularProgressIndicator()
                     : CustomBtn(
                         text: AppStrings.signUp,
