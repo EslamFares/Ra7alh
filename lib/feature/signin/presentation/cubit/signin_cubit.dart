@@ -7,7 +7,6 @@ class SignInCubit extends Cubit<SignInState> {
   SignInCubit() : super(SigninInitial());
   static SignInCubit get(context) => BlocProvider.of(context);
   //==============
-
   final TextEditingController emailCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
   var signInFormKey = GlobalKey<FormState>();
@@ -34,6 +33,20 @@ class SignInCubit extends Cubit<SignInState> {
       }
     } catch (e) {
       emit(SignInFailState(errMsg: e.toString()));
+    }
+  }
+
+  //==============
+  final TextEditingController forgetEmailCtrl = TextEditingController();
+  var forgetFormKey = GlobalKey<FormState>();
+  resetPAsswordWithLink() async {
+    try {
+      emit(ForgetLoadingState());
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: forgetEmailCtrl.text);
+      emit(ForgetSuccesState());
+    } on Exception catch (e) {
+      emit(ForgetFailState(errMsg: e.toString()));
     }
   }
 }

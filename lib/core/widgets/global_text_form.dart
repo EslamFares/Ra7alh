@@ -57,6 +57,12 @@ class GlobalTextForm extends StatelessWidget {
             return 'empty';
           } else if (moreValidation != null) {
             return moreValidation!();
+          } else if (isPass != null) {
+            if (value!.length < 6) {
+              return 'at leaset 6 characters!';
+            } else {
+              return null;
+            }
           } else {
             return null;
           }

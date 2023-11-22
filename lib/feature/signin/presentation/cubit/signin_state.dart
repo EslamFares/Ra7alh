@@ -15,3 +15,13 @@ class SignInFailState extends SignInState {
 
   SignInFailState({required this.errMsg});
 }
+
+class ForgetLoadingState extends SignInState {}
+
+class ForgetSuccesState extends SignInState {}
+
+class ForgetFailState extends SignInState {
+  final String errMsg;
+
+  ForgetFailState({required this.errMsg});
+}

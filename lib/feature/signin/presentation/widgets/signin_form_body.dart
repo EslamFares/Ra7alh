@@ -48,19 +48,13 @@ class SignInFormBody extends StatelessWidget {
                   hintText: '•••••••••••••',
                   labelText: 'Password',
                   isPass: cubit.ispass,
-                  moreValidation: () {
-                    if (cubit.passwordCtrl.text.length < 6) {
-                      return 'password at leaset 6!';
-                    }
-                    return null;
-                  },
                   showEndButton: true,
                   onTapShow: cubit.changeShowPassword,
                 ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: CustomTextButton(
-                    onTap: () {},
+                    onTap: () => context.push(AppRoutes.forgetPasswordView),
                     text: AppStrings.forgotPassword,
                   ),
                 ),
@@ -68,13 +62,13 @@ class SignInFormBody extends StatelessWidget {
                 state is SignInLoadingState
                     ? const CircularProgressIndicator()
                     : CustomBtn(
-                        text: AppStrings.signUp,
+                        text: AppStrings.signIn,
                         onTap: () {
                           if (cubit.signInFormKey.currentState!.validate()) {
                             cubit.signInWithEmailAndPassword();
                           } else {
                             showSnack(context,
-                                contentType: ContentType.failure,
+                                contentType: ContentType.warning,
                                 message: 'please, enter data...');
                           }
                         }),

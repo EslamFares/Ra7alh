@@ -12,6 +12,7 @@ import 'package:ra7alh/feature/signin/presentation/view/forget_password_view.dar
 import 'package:ra7alh/feature/splash/presentation/views/splash_view.dart';
 
 final GoRouter screensRouter = GoRouter(routes: [
+  // GoRoute(path: "/", builder: (context, state) => const ForgetPasswordView()),
   GoRoute(path: "/", builder: (context, state) => const SplashView()),
   GoRoute(
       path: AppRoutes.onboardingView,
@@ -28,5 +29,7 @@ final GoRouter screensRouter = GoRouter(routes: [
       path: AppRoutes.homeView, builder: (context, state) => const HomeView()),
   GoRoute(
       path: AppRoutes.forgetPasswordView,
-      builder: (context, state) => const ForgetPasswordView()),
+      builder: (context, state) => BlocProvider(
+          create: (context) => SignInCubit(),
+          child: const ForgetPasswordView())),
 ]);

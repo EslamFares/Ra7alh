@@ -14,6 +14,8 @@ abstract class AppAssets {
   static const String pyramids = 'assets/img/pyramids.png';
   static const String pyramidsSmall = 'assets/img/pyramids_small.png';
   //===========
+  static const String forgetPassword = 'assets/img/forget_password.png';
+  //===========
   static const String fontPacifico = 'Pacifico';
   static const String fontPoppins = 'Poppins';
 }

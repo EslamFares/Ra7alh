@@ -54,12 +54,6 @@ class SignUpFormBody extends StatelessWidget {
                 hintText: '•••••••••••••',
                 labelText: 'Password',
                 isPass: cubit.ispass,
-                moreValidation: () {
-                  if (cubit.passwordCtrl.text.length < 6) {
-                    return 'password at leaset 6!';
-                  }
-                  return null;
-                },
                 showEndButton: true,
                 onTapShow: cubit.changeShowPassword,
               ),
@@ -80,7 +74,7 @@ class SignUpFormBody extends StatelessWidget {
                           }
                         } else {
                           showSnack(context,
-                              contentType: ContentType.failure,
+                              contentType: ContentType.warning,
                               message: 'please, enter data...');
                         }
                       }),
