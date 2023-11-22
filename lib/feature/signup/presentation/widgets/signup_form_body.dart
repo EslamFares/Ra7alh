@@ -22,7 +22,13 @@ class SignUpFormBody extends StatelessWidget {
           showSnack(context,
               contentType: ContentType.failure, message: state.errMsg);
         } else if (state is SignUpSuccesState) {
-          context.pushReplacement(AppRoutes.homeView);
+          showSnack(context,
+              contentType: ContentType.help,
+              title: 'Hi There! ',
+              timeSec: 10,
+              message:
+                  'Congratulations! your account is created .... please, check your Email to verify your account');
+          context.pushReplacement(AppRoutes.signInView);
         }
       },
       builder: (context, state) {

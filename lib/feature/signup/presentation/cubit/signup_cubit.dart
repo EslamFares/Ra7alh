@@ -33,6 +33,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         email: emailCtrl.text,
         password: passwordCtrl.text,
       );
+      verifyEmail();
       emit(SignUpSuccesState());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -47,4 +48,10 @@ class SignUpCubit extends Cubit<SignUpState> {
       emit(SignUpFailState(errMsg: e.toString()));
     }
   }
+
+  //-------------
+  verifyEmail() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+  }
+  //-----------------------------
 }

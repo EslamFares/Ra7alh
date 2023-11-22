@@ -2,10 +2,14 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 
 showSnack(context,
-    {String? title, String? message, required ContentType? contentType}) {
+    {String? title,
+    String? message,
+    int? timeSec,
+    required ContentType? contentType}) {
   final snackBar = SnackBar(
     elevation: 0,
     behavior: SnackBarBehavior.floating,
+    duration: Duration(seconds: timeSec ?? 4),
     backgroundColor: Colors.transparent,
     content: AwesomeSnackbarContent(
       title: title ?? titleSnack(contentType),

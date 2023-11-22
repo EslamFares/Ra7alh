@@ -1,4 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -23,7 +24,11 @@ class SignInFormBody extends StatelessWidget {
           showSnack(context,
               contentType: ContentType.failure, message: state.errMsg);
         } else if (state is SignInSuccesState) {
-          context.pushReplacement(AppRoutes.homeView);
+          FirebaseAuth.instance.currentUser!.emailVerified
+              ? context.pushReplacement(AppRoutes.homeView)
+              : showSnack(context,
+                  contentType: ContentType.warning,
+                  message: 'please, check your Email to verify your account');
         }
       },
       builder: (context, state) {
