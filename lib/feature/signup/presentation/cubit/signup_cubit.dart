@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_state.dart';
+import 'package:ra7alh/feature/signup/presentation/cubit/signup_state.dart';
 
-class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthInitial());
-  static AuthCubit get(context) => BlocProvider.of(context);
+class SignUpCubit extends Cubit<SignUpState> {
+  SignUpCubit() : super(AuthInitial());
+  static SignUpCubit get(context) => BlocProvider.of(context);
   //=============================================================
   final TextEditingController firstNameCtrl = TextEditingController();
   final TextEditingController lastNameCtrl = TextEditingController();

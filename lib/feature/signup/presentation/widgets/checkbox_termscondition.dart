@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_strings.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_cubit.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_state.dart';
-import 'package:ra7alh/feature/auth/presentation/widgets/custom_text_button.dart';
+import 'package:ra7alh/feature/signup/presentation/cubit/signup_cubit.dart';
+import 'package:ra7alh/feature/signup/presentation/cubit/signup_state.dart';
+import 'package:ra7alh/feature/signup/presentation/widgets/custom_text_button.dart';
 
 class CheckBoxTermsAndCondition extends StatelessWidget {
   const CheckBoxTermsAndCondition({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
+    return BlocBuilder<SignUpCubit, SignUpState>(
       builder: (context, state) {
-        AuthCubit cubit = AuthCubit.get(context);
+        SignUpCubit cubit = SignUpCubit.get(context);
         return Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,

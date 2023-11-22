@@ -23,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
       delayNavigate(AppRoutes.onboardingView);
     } else {
       FirebaseAuth.instance.currentUser == null
-          ? delayNavigate(AppRoutes.signUpView)
+          ? delayNavigate(AppRoutes.signInView)
           : delayNavigate(AppRoutes.homeView);
     }
     super.initState();

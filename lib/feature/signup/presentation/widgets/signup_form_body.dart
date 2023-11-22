@@ -7,16 +7,16 @@ import 'package:ra7alh/core/utils/app_strings.dart';
 import 'package:ra7alh/core/widgets/custom_btn.dart';
 import 'package:ra7alh/core/widgets/global_text_form.dart';
 import 'package:ra7alh/core/widgets/show_snack.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_cubit.dart';
-import 'package:ra7alh/feature/auth/presentation/cubit/auth_state.dart';
-import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/checkbox_termscondition.dart';
+import 'package:ra7alh/feature/signup/presentation/cubit/signup_cubit.dart';
+import 'package:ra7alh/feature/signup/presentation/cubit/signup_state.dart';
+import 'package:ra7alh/feature/signup/presentation/widgets/checkbox_termscondition.dart';
 
 class SignUpFormBody extends StatelessWidget {
   const SignUpFormBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
+    return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpFailState) {
           showSnack(context,
@@ -26,7 +26,7 @@ class SignUpFormBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        AuthCubit cubit = AuthCubit.get(context);
+        SignUpCubit cubit = SignUpCubit.get(context);
         return Form(
           key: cubit.signUpFormKey,
           child: Column(

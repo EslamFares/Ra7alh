@@ -10,6 +10,12 @@ abstract class AppTextStyles {
     color: AppColors.blue,
     fontWeight: FontWeight.w400,
   );
+  static const TextStyle font50PacificoBluew500 = TextStyle(
+    fontSize: 50,
+    fontFamily: 'Pacifico',
+    color: AppColors.white,
+    fontWeight: FontWeight.w500,
+  );
   static const TextStyle font24PoppinsBlackBold = TextStyle(
     fontSize: 24,
     fontFamily: 'Poppins',

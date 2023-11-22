@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/have_account.dart';
-import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/signup_form_body.dart';
-import 'package:ra7alh/feature/auth/presentation/views/sign_up/widgets/welcome_text.dart';
+import 'package:ra7alh/feature/signup/presentation/widgets/have_account.dart';
+import '../widgets/signup_form_body.dart';
+import '../widgets/welcome_text.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
