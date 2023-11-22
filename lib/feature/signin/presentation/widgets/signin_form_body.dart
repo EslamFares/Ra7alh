@@ -25,7 +25,7 @@ class SignInFormBody extends StatelessWidget {
               contentType: ContentType.failure, message: state.errMsg);
         } else if (state is SignInSuccesState) {
           FirebaseAuth.instance.currentUser!.emailVerified
-              ? context.pushReplacement(AppRoutes.homeView)
+              ? context.pushReplacement(AppRoutes.homeBottomNavBarView)
               : showSnack(context,
                   contentType: ContentType.warning,
                   message: 'please, check your Email to verify your account');

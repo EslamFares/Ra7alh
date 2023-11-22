@@ -16,7 +16,7 @@ class CustomNetWorkImg extends StatelessWidget {
       child: Material(
         color:
             // MediaQuery.of(context).platformBrightness == Brightness.dark?
-            AppColors.blue,
+            AppColors.blueDark,
         borderRadius: BorderRadius.circular(raduis ?? 14),
         elevation: 3,
         child: ClipRRect(

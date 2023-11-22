@@ -4,15 +4,14 @@ import 'package:ra7alh/feature/signup/presentation/cubit/signup_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/cubit/signin_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/view/signin_view.dart';
 import 'package:ra7alh/feature/signup/presentation/views/signup_view.dart';
-import 'package:ra7alh/feature/home/presentation/view/home_view.dart';
 import 'package:ra7alh/feature/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ra7alh/feature/signin/presentation/view/forget_password_view.dart';
-// ignore: unused_import
-import 'package:ra7alh/feature/splash/presentation/views/splash_view.dart';
+import '../../feature/home/presentation/view/home_bottom_navbar_view.dart';
+import '../../feature/splash/presentation/views/splash_view.dart';
 
 final GoRouter screensRouter = GoRouter(routes: [
-  // GoRoute(path: "/", builder: (context, state) => const ForgetPasswordView()),
+  // GoRoute(path: "/", builder: (context, state) => const BottomNavBar()),
   GoRoute(path: "/", builder: (context, state) => const SplashView()),
   GoRoute(
       path: AppRoutes.onboardingView,
@@ -26,7 +25,9 @@ final GoRouter screensRouter = GoRouter(routes: [
       builder: (context, state) => BlocProvider(
           create: (context) => SignUpCubit(), child: const SignUpView())),
   GoRoute(
-      path: AppRoutes.homeView, builder: (context, state) => const HomeView()),
+      path: AppRoutes.homeBottomNavBarView,
+      builder: (context, state) => const HomeBottomNavBarView()),
+
   GoRoute(
       path: AppRoutes.forgetPasswordView,
       builder: (context, state) => BlocProvider(

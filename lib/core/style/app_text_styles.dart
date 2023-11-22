@@ -7,7 +7,7 @@ abstract class AppTextStyles {
   static const TextStyle font22PacificoBlueW400 = TextStyle(
     fontSize: 22,
     fontFamily: 'Pacifico',
-    color: AppColors.blue,
+    color: AppColors.blueDark,
     fontWeight: FontWeight.w400,
   );
   static const TextStyle font50PacificoBluew500 = TextStyle(
@@ -25,7 +25,7 @@ abstract class AppTextStyles {
   static const TextStyle font16PoppinsGrayW500 = TextStyle(
     fontSize: 16,
     fontFamily: 'Poppins',
-    color: AppColors.gray2,
+    color: AppColors.gray,
     fontWeight: FontWeight.w500,
   );
   static const TextStyle font16PoppinsDarkW500 = TextStyle(

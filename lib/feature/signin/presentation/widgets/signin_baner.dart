@@ -12,7 +12,7 @@ class SignInBaner extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      color: AppColors.blue2,
+      color: AppColors.blueLight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
