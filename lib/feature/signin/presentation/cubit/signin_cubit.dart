@@ -12,12 +12,13 @@ class SignInCubit extends Cubit<SignInState> {
   var signInFormKey = GlobalKey<FormState>();
   //-------
   bool ispass = true;
-  changeShowPassword() {
+  void changeShowPassword() {
     ispass = !ispass;
     emit(SignInShowPasswordState());
   }
 
-  signInWithEmailAndPassword() async {
+//================
+  Future<void> signInWithEmailAndPassword() async {
     try {
       emit(SignInLoadingState());
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -36,10 +37,10 @@ class SignInCubit extends Cubit<SignInState> {
     }
   }
 
-  //==============
+  //============== Forget Cubit =============
   final TextEditingController forgetEmailCtrl = TextEditingController();
   var forgetFormKey = GlobalKey<FormState>();
-  resetPAsswordWithLink() async {
+  Future<void> resetPAsswordWithLink() async {
     try {
       emit(ForgetLoadingState());
       await FirebaseAuth.instance

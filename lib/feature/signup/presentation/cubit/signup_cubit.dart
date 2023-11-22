@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ra7alh/core/utils/app_constants.dart';
 import 'package:ra7alh/feature/signup/presentation/cubit/signup_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
@@ -14,26 +16,27 @@ class SignUpCubit extends Cubit<SignUpState> {
   var signUpFormKey = GlobalKey<FormState>();
   //-------
   bool ispass = true;
-  changeShowPassword() {
+  void changeShowPassword() {
     ispass = !ispass;
     emit(SignUpShowPasswordState());
   }
 
   bool isagreeTermsCondition = true;
-  changeAgreeTermsCondition(value) {
+  void changeAgreeTermsCondition(value) {
     isagreeTermsCondition = value;
     emit(SignUpAgreeTermsConditionState());
   }
 
   //-------------------
-  signUpWithEmailAndPassword() async {
+  Future<void> signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailCtrl.text,
         password: passwordCtrl.text,
       );
-      verifyEmail();
+      await addUserProfileDataToFireStore();
+      await verifyEmail();
       emit(SignUpSuccesState());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -49,9 +52,19 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
   }
 
-  //-------------
-  verifyEmail() async {
+  //------------- verify Email--------------
+  Future<void> verifyEmail() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
-  //-----------------------------
+
+  //-------------------- add User Profile Data To FireStore ---------
+  Future<void> addUserProfileDataToFireStore() async {
+    CollectionReference users =
+        FirebaseFirestore.instance.collection(AppConsts.userCollectionName);
+    await users.add({
+      'email': emailCtrl.text,
+      'first_name': firstNameCtrl.text,
+      'last_name': lastNameCtrl.text,
+    });
+  }
 }

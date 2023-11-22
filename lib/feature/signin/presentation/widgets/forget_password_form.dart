@@ -46,9 +46,9 @@ class ForgetPasswordForm extends StatelessWidget {
                   ? const CircularProgressIndicator()
                   : CustomBtn(
                       text: AppStrings.sendResetPasswordLink,
-                      onTap: () {
+                      onTap: () async {
                         if (cubit.forgetFormKey.currentState!.validate()) {
-                          cubit.resetPAsswordWithLink();
+                          await cubit.resetPAsswordWithLink();
                         } else {
                           showSnack(context,
                               contentType: ContentType.warning,

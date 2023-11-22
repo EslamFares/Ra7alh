@@ -63,9 +63,9 @@ class SignInFormBody extends StatelessWidget {
                     ? const CircularProgressIndicator()
                     : CustomBtn(
                         text: AppStrings.signIn,
-                        onTap: () {
+                        onTap: () async {
                           if (cubit.signInFormKey.currentState!.validate()) {
-                            cubit.signInWithEmailAndPassword();
+                            await cubit.signInWithEmailAndPassword();
                           } else {
                             showSnack(context,
                                 contentType: ContentType.warning,
