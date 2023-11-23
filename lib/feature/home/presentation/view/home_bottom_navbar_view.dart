@@ -36,7 +36,10 @@ class HomeBottomNavBarView extends StatelessWidget {
 List<Widget> buildScreens() {
   return [
     BlocProvider(
-        create: (context) => HomeCubit()..getHistoricalPeriodData(),
+        create: (context) => HomeCubit()
+          ..getHistoricalPeriodData()
+          ..getHistoricalCharactersData()
+          ..getHistoricalSouvenirsData(),
         child: const HomeView()),
     const CartView(),
     const SearchView(),

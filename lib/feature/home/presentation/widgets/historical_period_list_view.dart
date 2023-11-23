@@ -1,9 +1,9 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ra7alh/core/widgets/shimmer/shimmer_view.dart';
 import 'package:ra7alh/core/widgets/show_snack.dart';
 import 'package:ra7alh/feature/home/presentation/cubit/home_cubit.dart';
-import '../../../../core/widgets/shimmer_shape.dart';
 import '../cubit/home_state.dart';
 import 'option_item.dart';
 
@@ -35,12 +35,7 @@ class HistoricalPeriodListView extends StatelessWidget {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                 ))
-            : const Row(
-                children: [
-                  ShimmerShape(),
-                  ShimmerShape(),
-                ],
-              );
+            : const ShimmerView(numOfItem: 2);
       },
     );
   }

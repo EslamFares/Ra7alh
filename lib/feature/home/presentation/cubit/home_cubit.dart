@@ -12,6 +12,9 @@ class HomeCubit extends Cubit<HomeState> {
   //======================
   List<HistoricalPeriodModel> historicalPeriodDataList = [];
   List<WarsModel> warsDataList = [];
+  List<WarsModel> charactersDataList = [];
+  List<WarsModel> souvenirsDataList = [];
+  List<WarsModel> booksDataList = [];
   Future<void> getHistoricalPeriodData() async {
     try {
       emit(HistoricalPeriodLoadingState());
@@ -26,6 +29,57 @@ class HomeCubit extends Cubit<HomeState> {
               }));
     } on Exception catch (e) {
       emit(HistoricalPeriodFailState(e.toString()));
+    }
+  }
+
+  Future<void> getHistoricalCharactersData() async {
+    try {
+      emit(CharactersLoadingState());
+      await FirebaseFirestore.instance
+          .collection(AppConsts.collHistoricalCharactersName)
+          .get()
+          .then((value) => value.docs.forEach((element) async {
+                charactersDataList.add(WarsModel.fromJson(
+                  element.data(),
+                ));
+              }));
+      emit(CharactersScccesState());
+    } on Exception catch (e) {
+      emit(CharactersFailState(e.toString()));
+    }
+  }
+
+  Future<void> getHistoricalSouvenirsData() async {
+    try {
+      emit(SouvenirsLoadingState());
+      await FirebaseFirestore.instance
+          .collection(AppConsts.collSouvenirsCharactersName)
+          .get()
+          .then((value) => value.docs.forEach((element) async {
+                souvenirsDataList.add(WarsModel.fromJson(
+                  element.data(),
+                ));
+                emit(SouvenirsScccesState());
+              }));
+    } on Exception catch (e) {
+      emit(SouvenirsFailState(e.toString()));
+    }
+  }
+
+  Future<void> getHistoricalBooksData() async {
+    try {
+      emit(BooksLoadingState());
+      await FirebaseFirestore.instance
+          .collection(AppConsts.collHistoryBooksName)
+          .get()
+          .then((value) => value.docs.forEach((element) async {
+                booksDataList.add(WarsModel.fromJson(
+                  element.data(),
+                ));
+                emit(BooksScccesState());
+              }));
+    } on Exception catch (e) {
+      emit(BooksFailState(e.toString()));
     }
   }
 

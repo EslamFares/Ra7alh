@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:ra7alh/core/models/data_stander_model.dart';
 import '../../../../core/style/app_text_styles.dart';
 import '../../../../core/widgets/custom_network_img.dart';
 
-class ListViewCategoryItem extends StatelessWidget {
-  const ListViewCategoryItem(
-      {super.key, this.onTap, required this.imgUrl, required this.text});
+class DataListViewItem extends StatelessWidget {
+  const DataListViewItem(this.dataModel, {super.key, this.onTap});
   final Function? onTap;
-  final String imgUrl;
-  final String text;
+  final DataStanderModel dataModel;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -31,7 +31,7 @@ class ListViewCategoryItem extends StatelessWidget {
                     width: 120,
                     height: 155,
                     child: CustomNetWorkImg(
-                      imgUrl,
+                      dataModel.image,
                       customRaduis: const BorderRadius.only(
                         topLeft: Radius.circular(8),
                         topRight: Radius.circular(8),
@@ -45,7 +45,7 @@ class ListViewCategoryItem extends StatelessWidget {
                     padding: const EdgeInsets.all(5.0),
                     child: Center(
                       child: Text(
-                        text,
+                        dataModel.name,
                         textAlign: TextAlign.center,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
