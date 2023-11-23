@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ra7alh/core/utils/app_strings.dart';
 import 'package:ra7alh/core/widgets/tilte_text.dart';
-import 'package:ra7alh/feature/home/presentation/widgets/category_characters.dart';
+import 'package:ra7alh/feature/home/presentation/widgets/category_list_view.dart';
 import 'package:ra7alh/feature/home/presentation/widgets/list_view_category_item.dart';
 import '../../../../../core/utils/app_assets.dart';
 
