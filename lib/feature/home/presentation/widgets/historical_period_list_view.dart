@@ -1,8 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:ra7alh/core/utils/app_constants.dart';
-import 'package:ra7alh/feature/home/data/models/historical_period_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ra7alh/core/widgets/show_snack.dart';
+import 'package:ra7alh/feature/home/presentation/cubit/home_cubit.dart';
 import '../../../../core/widgets/shimmer_shape.dart';
+import '../cubit/home_state.dart';
 import 'option_item.dart';
 
 class HistoricalPeriodListView extends StatelessWidget {
@@ -10,45 +12,36 @@ class HistoricalPeriodListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<QuerySnapshot>(
-        future: FirebaseFirestore.instance
-            .collection(AppConsts.collHistoricalPeriodsName)
-            .get(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Text("Something went wrong");
-          }
-
-          if (snapshot.hasData && !snapshot.data!.docs[0].exists) {
-            return const Text("Document does not exist");
-          }
-
-          if (snapshot.connectionState == ConnectionState.done) {
-            List<HistoricalPeriodModel> historicalPeriodListData = [];
-            for (var element in snapshot.data!.docs) {
-              historicalPeriodListData
-                  .add(HistoricalPeriodModel.fromJson(element));
-            }
-            debugPrint('======> ${historicalPeriodListData.length}');
-            return SizedBox(
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        if (state is HistoricalPeriodFailState) {
+          showSnack(context,
+              contentType: ContentType.failure, message: state.errmsg);
+        }
+      },
+      builder: (context, state) {
+        HomeCubit cubit = HomeCubit.get(context);
+        return state is HistoricalPeriodScccesState
+            ? SizedBox(
                 height: 100,
                 width: double.infinity,
                 child: ListView.separated(
                   clipBehavior: Clip.none,
-                  itemCount: snapshot.data!.docs.length,
+                  itemCount: cubit.historicalPeriodDataList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => OptionItem(
-                      historicalPeriodModel: historicalPeriodListData[index]),
+                      historicalPeriodModel:
+                          cubit.historicalPeriodDataList[index]),
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
-                ));
-          }
-          return const Row(
-            children: [
-              ShimmerShape(),
-              ShimmerShape(),
-            ],
-          );
-        });
+                ))
+            : const Row(
+                children: [
+                  ShimmerShape(),
+                  ShimmerShape(),
+                ],
+              );
+      },
+    );
   }
 }

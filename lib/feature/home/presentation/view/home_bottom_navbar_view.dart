@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:ra7alh/core/utils/app_colors.dart';
 import 'package:ra7alh/feature/cart/presentation/view/cart_view.dart';
+import 'package:ra7alh/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:ra7alh/feature/home/presentation/view/home_view.dart';
 import 'package:ra7alh/feature/profile/presentation/view/profile_view.dart';
 import 'package:ra7alh/feature/search/presentation/view/search_view.dart';
@@ -33,7 +35,9 @@ class HomeBottomNavBarView extends StatelessWidget {
 
 List<Widget> buildScreens() {
   return [
-    const HomeView(),
+    BlocProvider(
+        create: (context) => HomeCubit()..getHistoricalPeriodData(),
+        child: const HomeView()),
     const CartView(),
     const SearchView(),
     const ProfileView(),
