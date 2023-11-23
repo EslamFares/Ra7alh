@@ -85,13 +85,20 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getWarsList(
       QueryDocumentSnapshot<Map<String, dynamic>> element) async {
+    // warsDataList.clear();
+    // print('=============> start length ${warsDataList.length}');
+    // print('=============> collection name ${element.data()['name']}');
     await FirebaseFirestore.instance
         .collection(AppConsts.collHistoricalPeriodsName)
         .doc(element.id)
         .collection(AppConsts.collWarsName)
         .get()
         .then((value) => value.docs.forEach((element) {
+              // print('===>>>>>>>war name ${element.data()['name']}');
               warsDataList.add(WarsModel.fromJson(element.data()));
             }));
+
+    // print('=============> end length ${warsDataList.length}');
+    // print('=============> collection name  ${element.data()['name']}');
   }
 }

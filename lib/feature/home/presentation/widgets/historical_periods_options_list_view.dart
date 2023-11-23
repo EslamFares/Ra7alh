@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ra7alh/feature/home/data/models/historical_period_model.dart';
-import 'package:ra7alh/feature/home/presentation/widgets/option_item.dart';
+import 'package:ra7alh/core/widgets/option_item.dart';
 
-class OptionsListView extends StatelessWidget {
-  const OptionsListView({super.key, required this.list, required this.path});
+class HistoricalperiodsOptionsListView extends StatelessWidget {
+  const HistoricalperiodsOptionsListView(
+      {super.key, required this.list, required this.path});
 
   final List<HistoricalPeriodModel> list;
   final String path;
@@ -19,10 +20,12 @@ class OptionsListView extends StatelessWidget {
           itemCount: list.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => OptionItem(
-              onTap: () {
-                context.push(path, extra: list[index]);
-              },
-              model: list[index]),
+            onTap: () {
+              context.push(path, extra: list[index]);
+            },
+            title: list[index].name,
+            img: list[index].image,
+          ),
           separatorBuilder: (context, index) => const SizedBox(width: 16),
         ));
   }

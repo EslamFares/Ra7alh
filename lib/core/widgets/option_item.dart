@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../../../core/style/app_text_styles.dart';
-import '../../../../core/widgets/custom_network_img.dart';
-import '../../data/models/historical_period_model.dart';
+import '../style/app_text_styles.dart';
+import 'custom_network_img.dart';
 
 class OptionItem extends StatelessWidget {
-  const OptionItem({super.key, required this.model, required this.onTap});
-  final Function onTap;
-  final HistoricalPeriodModel model;
+  const OptionItem(
+      {super.key, required this.title, required this.img, this.onTap});
+  final Function? onTap;
+  final String title, img;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        onTap();
+        if (onTap != null) {
+          onTap!();
+        }
       },
       child: Material(
         elevation: 5,
@@ -30,7 +32,7 @@ class OptionItem extends StatelessWidget {
               SizedBox(
                 width: 70,
                 child: Text(
-                  model.name,
+                  title,
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -42,7 +44,7 @@ class OptionItem extends StatelessWidget {
                 width: 85,
                 height: 100,
                 child: CustomNetWorkImg(
-                  model.image,
+                  img,
                   aspectRatio: .73,
                   raduisNum: 8,
                 ),

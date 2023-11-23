@@ -8,7 +8,7 @@ import 'package:ra7alh/core/widgets/show_snack.dart';
 import 'package:ra7alh/core/widgets/tilte_text.dart';
 import 'package:ra7alh/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:ra7alh/feature/home/presentation/cubit/home_state.dart';
-import 'package:ra7alh/feature/home/presentation/widgets/options_list_view.dart';
+import 'package:ra7alh/feature/home/presentation/widgets/historical_periods_options_list_view.dart';
 
 class HistoricalPeriodsSection extends StatelessWidget {
   const HistoricalPeriodsSection({
@@ -30,7 +30,7 @@ class HistoricalPeriodsSection extends StatelessWidget {
           builder: (context, state) {
             HomeCubit cubit = HomeCubit.get(context);
             return state is HistoricalPeriodScccesState
-                ? OptionsListView(
+                ? HistoricalperiodsOptionsListView(
                     list: cubit.historicalPeriodDataList,
                     path: AppRoutes.historicalPeriodDetailsView,
                   )

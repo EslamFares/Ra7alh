@@ -3,38 +3,6 @@ import 'package:ra7alh/core/style/app_text_styles.dart';
 import 'package:ra7alh/core/utils/app_assets.dart';
 import 'package:ra7alh/core/widgets/custom_network_img.dart';
 
-class DetailsBodySection extends StatelessWidget {
-  const DetailsBodySection({
-    super.key,
-    required this.name,
-    required this.description,
-    required this.imgUrl,
-  });
-  final String name, description, imgUrl;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 20),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('About $name',
-                textAlign: TextAlign.center,
-                style: AppTextStyles.font28PoppinsBlueBold),
-            const SizedBox(width: 10),
-            Image.asset(AppAssets.iconLifeKey,
-                height: 55, width: 35, fit: BoxFit.fitWidth)
-          ],
-        ),
-        const SizedBox(height: 30),
-        DescriptionAndImageDetails(description: description, imgUrl: imgUrl)
-      ],
-    );
-  }
-}
-
 class DescriptionAndImageDetails extends StatelessWidget {
   const DescriptionAndImageDetails({
     super.key,
