@@ -6,4 +6,6 @@ abstract class AppRoutes {
   static const String signInView = "/SignInView";
   static const String homeBottomNavBarView = "/HomeBottomNavBarView";
   static const String forgetPasswordView = "/ForgetPasswordView";
+  static const String historicalPeriodDetailsView =
+      "/HistoricalPeriodDetailsView";
 }

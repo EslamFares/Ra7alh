@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/routers/app_routes.dart';
+import 'package:ra7alh/feature/home/presentation/view/historical_period_details_view/historical_period_details_view.dart';
 import 'package:ra7alh/feature/signup/presentation/cubit/signup_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/cubit/signin_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/view/signin_view.dart';
@@ -27,7 +28,9 @@ final GoRouter screensRouter = GoRouter(routes: [
   GoRoute(
       path: AppRoutes.homeBottomNavBarView,
       builder: (context, state) => const HomeBottomNavBarView()),
-
+  GoRoute(
+      path: AppRoutes.historicalPeriodDetailsView,
+      builder: (context, state) => const HistoricalPeriodDetailsView()),
   GoRoute(
       path: AppRoutes.forgetPasswordView,
       builder: (context, state) => BlocProvider(
