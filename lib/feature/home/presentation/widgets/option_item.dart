@@ -4,14 +4,14 @@ import '../../../../core/widgets/custom_network_img.dart';
 import '../../data/models/historical_period_model.dart';
 
 class OptionItem extends StatelessWidget {
-  const OptionItem({super.key, required this.model, this.onTap});
-  final Function? onTap;
+  const OptionItem({super.key, required this.model, required this.onTap});
+  final Function onTap;
   final HistoricalPeriodModel model;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        onTap ?? ();
+        onTap();
       },
       child: Material(
         elevation: 5,

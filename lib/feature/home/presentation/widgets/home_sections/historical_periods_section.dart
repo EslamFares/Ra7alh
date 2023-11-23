@@ -1,7 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/routers/app_routes.dart';
 import 'package:ra7alh/core/utils/app_strings.dart';
 import 'package:ra7alh/core/widgets/shimmer/shimmer_view.dart';
@@ -33,8 +32,7 @@ class HistoricalPeriodsSection extends StatelessWidget {
             return state is HistoricalPeriodScccesState
                 ? OptionsListView(
                     list: cubit.historicalPeriodDataList,
-                    onTapItem: () =>
-                        context.push(AppRoutes.historicalPeriodDetailsView),
+                    path: AppRoutes.historicalPeriodDetailsView,
                   )
                 : const ShimmerView(numOfItem: 2);
           },

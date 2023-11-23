@@ -8,6 +8,9 @@ abstract class AppAssets {
   static const String icon = 'assets/icon/icon.png';
   static const String icon512 = 'assets/icon/icon512.png';
   static const String iconSmall = 'assets/icon/icon_small.png';
+  static const String iconNsr = 'assets/icon/nsr.png';
+  static const String iconLifeKey = 'assets/icon/life_key.png';
+  static const String iconPyramidsDetails = 'assets/icon/pyramids_details.png';
   //===========
   static const String masgid = 'assets/img/masgid.png';
   static const String masgidSmall = 'assets/img/masgid_small.png';
