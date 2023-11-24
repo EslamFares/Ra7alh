@@ -1,7 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:ra7alh/core/routers/app_routes.dart';
 import 'package:ra7alh/feature/home/data/models/historical_period_model.dart';
-import 'package:ra7alh/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:ra7alh/feature/home/presentation/view/historical_period_details_view/historical_period_details_view.dart';
 import 'package:ra7alh/feature/signup/presentation/cubit/signup_cubit.dart';
 import 'package:ra7alh/feature/signin/presentation/cubit/signin_cubit.dart';

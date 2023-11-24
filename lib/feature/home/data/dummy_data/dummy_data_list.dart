@@ -1,13 +1,21 @@
+import 'package:ra7alh/core/utils/app_strings.dart';
+
 import '../../../../core/models/data_stander_model.dart';
 import '../../../../core/utils/app_assets.dart';
 
 List<DataStanderModel> dummyDatalist = [
   DataStanderModel(
-      name: 'kkk', image: AppAssets.imgUrlKings1, description: 'description'),
+      name: 'King Eslam Fares',
+      image: AppAssets.imgUrlKing,
+      description: AppStrings.lorm),
   DataStanderModel(
-      name: 'fjmf', image: AppAssets.imgUrlSovenir, description: 'description'),
+      name: 'Old Egyption Tools',
+      image: AppAssets.imgUrlSovenir,
+      description: AppStrings.lorm2),
   DataStanderModel(
-      name: 'f;k;l', image: AppAssets.imgUrl, description: 'description'),
+      name: 'pharaoh', image: AppAssets.imgUrl, description: AppStrings.lorm),
   DataStanderModel(
-      name: 'kkkflkfki', image: AppAssets.imgUrl2, description: 'description'),
+      name: 'Islamic (mosque)',
+      image: AppAssets.imgUrl2,
+      description: AppStrings.lorm2),
 ];

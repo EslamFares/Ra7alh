@@ -22,6 +22,8 @@ abstract class AppAssets {
   static const String fontPacifico = 'Pacifico';
   static const String fontPoppins = 'Poppins';
   //==================
+  static const String imgUrlKing =
+      'https://pbs.twimg.com/media/Eve4TwNXYAcWbUf.jpg';
   static const String imgUrl =
       'https://www.ancient-origins.net/sites/default/files/field/image/Egyptian-pharaoh-life.jpg';
 

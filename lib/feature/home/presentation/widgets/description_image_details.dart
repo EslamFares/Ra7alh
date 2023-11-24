@@ -50,16 +50,18 @@ class DescriptionAndImageDetails extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: SizedBox(
-              width: 150,
-              child: CustomNetWorkImg(
-                imgUrl,
-                raduisNum: 0,
-                elevation: 0,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 120,
+                child: CustomNetWorkImg(
+                  imgUrl,
+                  raduisNum: 0,
+                  elevation: 0,
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),

@@ -21,12 +21,20 @@ class HomeBottomNavBarView extends StatelessWidget {
       context,
       controller: btmNavController,
       navBarStyle: NavBarStyle.style12,
-      backgroundColor: AppColors.blueLight,
-      decoration: const NavBarDecoration(
-          borderRadius: BorderRadius.only(
-        topRight: Radius.circular(10),
-        topLeft: Radius.circular(10),
-      )),
+      backgroundColor: AppColors.white,
+      decoration: NavBarDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 10,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
+          borderRadius: const BorderRadius.only(
+            topRight: Radius.circular(10),
+            topLeft: Radius.circular(10),
+          )),
       screens: buildScreens(),
       items: navBarsItems(),
     );

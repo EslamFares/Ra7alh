@@ -21,11 +21,18 @@ class CheckBoxTermsAndCondition extends StatelessWidget {
             Checkbox(
                 value: cubit.isagreeTermsCondition,
                 onChanged: cubit.changeAgreeTermsCondition),
-            Text(
-              AppStrings.iHaveAgreeToOur,
-              style: AppTextStyles.font16PoppinsDarkW500.copyWith(fontSize: 14),
+            Flexible(
+              child: Text(
+                AppStrings.iHaveAgreeToOur,
+                style:
+                    AppTextStyles.font16PoppinsDarkW500.copyWith(fontSize: 14),
+              ),
             ),
-            CustomTextButton(onTap: () {}, text: AppStrings.termsAndCondition)
+            CustomTextButton(
+              onTap: () {},
+              text: AppStrings.termsAndCondition,
+              fontSized: 12,
+            )
           ],
         );
       },

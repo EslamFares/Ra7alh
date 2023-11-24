@@ -41,7 +41,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       });
                     },
                   ),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 30),
                   currentIndex == onBoardingData.length - 1
                       ? const CreateAccountOrLoginNow()
                       : CustomBtn(onTap: () {

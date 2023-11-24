@@ -18,9 +18,13 @@ class SkipBtn extends StatelessWidget {
           GetStorageHelper.writeData('isfisrttime', false);
           context.pushReplacement(AppRoutes.signUpView);
         },
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
         child: const Text(
           AppStrings.skip,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 16),
         ),
       ),
     );

@@ -65,8 +65,8 @@ abstract class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeight.bold,
   );
-  static const TextStyle font28PoppinsBlueBold = TextStyle(
-    fontSize: 28,
+  static const TextStyle font24PoppinsBlueBold = TextStyle(
+    fontSize: 24,
     fontFamily: 'Poppins',
     color: AppColors.blue,
     fontWeight: FontWeight.bold,

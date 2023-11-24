@@ -23,7 +23,7 @@ class OnBoardingBody extends StatelessWidget {
           children: [
             Container(
               width: context.width,
-              height: 350,
+              height: 300,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(onBoardingData[index].imgPath),

@@ -19,9 +19,9 @@ class _SignUpViewState extends State<SignUpView> {
       padding: EdgeInsets.all(16.0),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: SizedBox(height: 100)),
+          SliverToBoxAdapter(child: SizedBox(height: 80)),
           SliverToBoxAdapter(child: WelcomeText()),
-          SliverToBoxAdapter(child: SizedBox(height: 40)),
+          SliverToBoxAdapter(child: SizedBox(height: 30)),
           SliverToBoxAdapter(child: SignUpFormBody()),
           SliverToBoxAdapter(child: HaveAccount()),
         ],

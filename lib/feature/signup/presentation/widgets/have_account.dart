@@ -14,7 +14,7 @@ class HaveAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(AppStrings.alreadyHaveAnAccount),
+        const Flexible(child: Text(AppStrings.alreadyHaveAnAccount)),
         CustomTextButton(
             onTap: () {
               context.pushReplacement(AppRoutes.signInView);

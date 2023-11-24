@@ -23,7 +23,7 @@ class ForgetPasswordView extends StatelessWidget {
             slivers: [
               const SliverToBoxAdapter(
                   child: Padding(
-                      padding: EdgeInsets.only(top: 20, bottom: 40),
+                      padding: EdgeInsets.only(top: 20, bottom: 30),
                       child: WelcomeText(text: AppStrings.forgotPasswordPage))),
               SliverToBoxAdapter(
                 child: Image.asset(AppAssets.forgetPassword,

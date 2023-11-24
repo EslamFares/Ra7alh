@@ -15,8 +15,9 @@ class WarsListSecation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
-        Positioned(top: 0, right: 0, child: Image.asset(AppAssets.iconNsr)),
+        Positioned(top: 0, right: -1, child: Image.asset(AppAssets.iconNsr)),
         Column(
           children: [
             TilteText('${model.name} wars'),

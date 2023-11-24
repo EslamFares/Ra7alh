@@ -9,8 +9,10 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomHomeAppBar({
     super.key,
     required this.onTap,
+    this.leadingIcon,
   });
   final Function onTap;
+  final IconData? leadingIcon;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -20,7 +22,7 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.white,
       elevation: 0,
       leading: SmallIconButton(
-        icon: FontAwesomeIcons.equals,
+        icon: leadingIcon ?? FontAwesomeIcons.equals,
         onPressed: onTap,
         iconSize: 30,
         color: AppColors.blue,

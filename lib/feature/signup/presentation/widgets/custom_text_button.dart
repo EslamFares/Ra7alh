@@ -7,9 +7,11 @@ class CustomTextButton extends StatelessWidget {
     required this.onTap,
     this.text,
     this.child,
+    this.fontSized,
   });
   final VoidCallback onTap;
   final String? text;
+  final double? fontSized;
   final Widget? child;
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,6 @@ class CustomTextButton extends StatelessWidget {
         child: child ??
             Text(text ?? 'click',
                 style: AppTextStyles.font16PoppinsUnderLine
-                    .copyWith(fontSize: 14)));
+                    .copyWith(fontSize: fontSized ?? 14)));
   }
 }

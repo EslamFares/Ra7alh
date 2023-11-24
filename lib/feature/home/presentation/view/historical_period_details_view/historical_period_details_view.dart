@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ra7alh/feature/home/data/models/historical_period_model.dart';
 import 'package:ra7alh/feature/home/presentation/widgets/custom_home_appbar.dart';
 import 'package:ra7alh/feature/home/presentation/widgets/details_sections/details_body_section.dart';
@@ -11,7 +13,8 @@ class HistoricalPeriodDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomHomeAppBar(onTap: () {}),
+      appBar: CustomHomeAppBar(
+          leadingIcon: CupertinoIcons.back, onTap: () => context.pop()),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: CustomScrollView(

@@ -15,12 +15,14 @@ class TitleLifeKey extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('About $name',
-            textAlign: TextAlign.center,
-            style: AppTextStyles.font28PoppinsBlueBold),
+        Flexible(
+          child: Text('About $name',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.font24PoppinsBlueBold),
+        ),
         const SizedBox(width: 10),
         Image.asset(AppAssets.iconLifeKey,
-            height: 55, width: 35, fit: BoxFit.fitWidth)
+            height: 45, width: 30, fit: BoxFit.fitWidth)
       ],
     );
   }

@@ -21,7 +21,7 @@ class _SignInViewState extends State<SignInView> {
           SliverToBoxAdapter(child: SignInBaner()),
           SliverToBoxAdapter(
               child: Padding(
-                  padding: EdgeInsets.only(top: 30, bottom: 40),
+                  padding: EdgeInsets.only(top: 20, bottom: 30),
                   child: WelcomeText(text: AppStrings.welcomeBack))),
           SliverToBoxAdapter(child: SignInFormBody()),
           SliverToBoxAdapter(child: DonotHaveAccount()),

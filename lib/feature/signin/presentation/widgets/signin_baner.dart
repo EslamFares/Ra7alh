@@ -21,17 +21,21 @@ class SignInBaner extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                AppAssets.pyramidsSmall,
-                width: 200,
-                height: 150,
-                alignment: Alignment.bottomLeft,
+              Expanded(
+                child: Image.asset(
+                  AppAssets.pyramidsSmall,
+                  width: 200,
+                  height: 150,
+                  alignment: Alignment.bottomLeft,
+                ),
               ),
-              Image.asset(
-                AppAssets.masgidSmall,
-                width: 200,
-                height: 150,
-                alignment: Alignment.bottomRight,
+              Expanded(
+                child: Image.asset(
+                  AppAssets.masgidSmall,
+                  width: 200,
+                  height: 150,
+                  alignment: Alignment.bottomRight,
+                ),
               ),
             ],
           )

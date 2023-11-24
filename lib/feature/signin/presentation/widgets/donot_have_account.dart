@@ -16,7 +16,7 @@ class DonotHaveAccount extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(AppStrings.dontHaveAnAccount),
+          const Flexible(child: Text(AppStrings.dontHaveAnAccount)),
           CustomTextButton(
               onTap: () {
                 context.pushReplacement(AppRoutes.signUpView);
