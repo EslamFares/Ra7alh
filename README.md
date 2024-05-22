@@ -9,7 +9,7 @@
 
 firebase - forget password - firestore
 
-<h4><img align="center" height="20" src="https://media.istockphoto.com/id/1177118488/vector/touch-smartphone-icon-with-hand-for-your-projects.jpg?s=612x612&w=0&k=20&c=txLl828viaMRnrxFZJf-8cj9WyEqRKU2HyEJxOHBucg="> <p align="center">img from app </p></h4>
+<h4>img from app  <img align="center" height="20" src="https://media.istockphoto.com/id/1177118488/vector/touch-smartphone-icon-with-hand-for-your-projects.jpg?s=612x612&w=0&k=20&c=txLl828viaMRnrxFZJf-8cj9WyEqRKU2HyEJxOHBucg="> </h4>
 
 <p float="left">
   <img src="https://i.ibb.co/FVyvGD3/1.png" width="80" />
